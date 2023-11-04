@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- {% for pc in pcgamer %}
+        <div class="notification is-primary">
+          Le PC {{ pc.Modele }} de la {{ pc.Marque }} coûte {{ pc.Prix }}
+        </div>
+        {% endfor %} -->
+
+      <h1 class="title is-1"> {{ site }} -- {{ type}}</h1> 
+      <a type="submit" class="button is-link" href="/download/{{id}}"> Télécharger</a>
+      <table class="table">
+          <thead>
+              <th>Modèle</th>
+              <th>Info</th>
+              <th>Prix</th>
+          </thead>
+          <tbody>
+            {% for produit in produits %}
+            <tr>
+                <td>{{produit.Modele}}</td>
+                <td>{{produit.Info}}</td>
+                <td>{{produit.Prix}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table> 
+{% endblock body %}
